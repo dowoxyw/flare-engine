@@ -1,15 +1,23 @@
 /flare
 /flare.exe
+/flare.pdb
 /CMakeFiles/
 /CMakeCache.txt
 /Makefile
 /cmake_install.cmake
 /install_manifest.txt
-/build/
 /build-debug/
 /build-release/
 /config/
 /saves/
+/build/VC/x64/
+/mods/alpha_demo/
+/mods/centered_statbars/
+/mods/devlab/
+/mods/empyrean_campaign/
+/mods/fantasycore/
+/mods/minicore/
+/mods/minicore_alpha/
 # ignore also vim swap files
 .*.sw*
 /flare.desktop

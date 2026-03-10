@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{b4e540a6-35ec-46b1-ad9c-731676fab787}</ProjectGuid>
+    <RootNamespace>flare</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)..\..\..\..\..\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\..\..\SDL2\SDL2-2.0.8\include;..\..\..\SDL2\SDL2_ttf-2.0.15\include;..\..\..\SDL2\SDL2_mixer-2.5.2\include;..\..\..\SDL2\SDL2_image-2.5.2\include;..\..\lib\dirent;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\..\SDL2\SDL2_ttf-2.0.15\lib\x64;..\..\..\SDL2\SDL2_mixer-2.5.2\lib\x64;..\..\..\SDL2\SDL2_image-2.5.2\lib\x64;..\..\..\SDL2\SDL2-2.0.8\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>..\..\..\SDL2\SDL2-2.0.8\lib\x64\SDL2.lib;..\..\..\SDL2\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.lib;..\..\..\SDL2\SDL2_mixer-2.5.2\lib\x64\SDL2_mixer.lib;..\..\..\SDL2\SDL2_image-2.5.2\lib\x64\SDL2_image.lib;..\..\..\SDL2\SDL2-2.0.8\lib\x64\SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\Animation.cpp" />
+    <ClCompile Include="..\..\src\AnimationManager.cpp" />
+    <ClCompile Include="..\..\src\AnimationMedia.cpp" />
+    <ClCompile Include="..\..\src\AnimationSet.cpp" />
+    <ClCompile Include="..\..\src\AStarContainer.cpp" />
+    <ClCompile Include="..\..\src\AStarNode.cpp" />
+    <ClCompile Include="..\..\src\Avatar.cpp" />
+    <ClCompile Include="..\..\src\Camera.cpp" />
+    <ClCompile Include="..\..\src\CampaignManager.cpp" />
+    <ClCompile Include="..\..\src\CombatText.cpp" />
+    <ClCompile Include="..\..\src\CursorManager.cpp" />
+    <ClCompile Include="..\..\src\DeviceList.cpp" />
+    <ClCompile Include="..\..\src\EffectManager.cpp" />
+    <ClCompile Include="..\..\src\EnemyGroupManager.cpp" />
+    <ClCompile Include="..\..\src\EngineSettings.cpp" />
+    <ClCompile Include="..\..\src\Entity.cpp" />
+    <ClCompile Include="..\..\src\EntityBehavior.cpp" />
+    <ClCompile Include="..\..\src\EntityManager.cpp" />
+    <ClCompile Include="..\..\src\EventManager.cpp" />
+    <ClCompile Include="..\..\src\FileParser.cpp" />
+    <ClCompile Include="..\..\src\FogOfWar.cpp" />
+    <ClCompile Include="..\..\src\FontEngine.cpp" />
+    <ClCompile Include="..\..\src\GameSlotPreview.cpp" />
+    <ClCompile Include="..\..\src\GameState.cpp" />
+    <ClCompile Include="..\..\src\GameStateConfig.cpp" />
+    <ClCompile Include="..\..\src\GameStateCutscene.cpp" />
+    <ClCompile Include="..\..\src\GameStateLoad.cpp" />
+    <ClCompile Include="..\..\src\GameStateNew.cpp" />
+    <ClCompile Include="..\..\src\GameStatePlay.cpp" />
+    <ClCompile Include="..\..\src\GameStateTitle.cpp" />
+    <ClCompile Include="..\..\src\GameSwitcher.cpp" />
+    <ClCompile Include="..\..\src\GetText.cpp" />
+    <ClCompile Include="..\..\src\Hazard.cpp" />
+    <ClCompile Include="..\..\src\HazardManager.cpp" />
+    <ClCompile Include="..\..\src\IconManager.cpp" />
+    <ClCompile Include="..\..\src\InputState.cpp" />
+    <ClCompile Include="..\..\src\ItemManager.cpp" />
+    <ClCompile Include="..\..\src\ItemStorage.cpp" />
+    <ClCompile Include="..\..\src\Loot.cpp" />
+    <ClCompile Include="..\..\src\LootManager.cpp" />
+    <ClCompile Include="..\..\src\main.cpp" />
+    <ClCompile Include="..\..\src\Map.cpp" />
+    <ClCompile Include="..\..\src\MapCollision.cpp" />
+    <ClCompile Include="..\..\src\MapParallax.cpp" />
+    <ClCompile Include="..\..\src\MapRenderer.cpp" />
+    <ClCompile Include="..\..\src\MapSaver.cpp" />
+    <ClCompile Include="..\..\src\Menu.cpp" />
+    <ClCompile Include="..\..\src\MenuActionBar.cpp" />
+    <ClCompile Include="..\..\src\MenuActiveEffects.cpp" />
+    <ClCompile Include="..\..\src\MenuBook.cpp" />
+    <ClCompile Include="..\..\src\MenuCharacter.cpp" />
+    <ClCompile Include="..\..\src\MenuConfig.cpp" />
+    <ClCompile Include="..\..\src\MenuConfirm.cpp" />
+    <ClCompile Include="..\..\src\MenuDevConsole.cpp" />
+    <ClCompile Include="..\..\src\MenuEnemy.cpp" />
+    <ClCompile Include="..\..\src\MenuExit.cpp" />
+    <ClCompile Include="..\..\src\MenuGameOver.cpp" />
+    <ClCompile Include="..\..\src\MenuHUDLog.cpp" />
+    <ClCompile Include="..\..\src\MenuInventory.cpp" />
+    <ClCompile Include="..\..\src\MenuItemStorage.cpp" />
+    <ClCompile Include="..\..\src\MenuLog.cpp" />
+    <ClCompile Include="..\..\src\MenuManager.cpp" />
+    <ClCompile Include="..\..\src\MenuMiniMap.cpp" />
+    <ClCompile Include="..\..\src\MenuNumPicker.cpp" />
+    <ClCompile Include="..\..\src\MenuPowers.cpp" />
+    <ClCompile Include="..\..\src\MenuStash.cpp" />
+    <ClCompile Include="..\..\src\MenuStatBar.cpp" />
+    <ClCompile Include="..\..\src\MenuTalker.cpp" />
+    <ClCompile Include="..\..\src\MenuTouchControls.cpp" />
+    <ClCompile Include="..\..\src\MenuVendor.cpp" />
+    <ClCompile Include="..\..\src\MessageEngine.cpp" />
+    <ClCompile Include="..\..\src\ModManager.cpp" />
+    <ClCompile Include="..\..\src\NPC.cpp" />
+    <ClCompile Include="..\..\src\NPCManager.cpp" />
+    <ClCompile Include="..\..\src\PlatformWin32.cpp" />
+    <ClCompile Include="..\..\src\PowerManager.cpp" />
+    <ClCompile Include="..\..\src\QuestLog.cpp" />
+    <ClCompile Include="..\..\src\RenderDevice.cpp" />
+    <ClCompile Include="..\..\src\SaveLoad.cpp" />
+    <ClCompile Include="..\..\src\SDLFontEngine.cpp" />
+    <ClCompile Include="..\..\src\SDLHardwareRenderDevice.cpp" />
+    <ClCompile Include="..\..\src\SDLInputState.cpp" />
+    <ClCompile Include="..\..\src\SDLSoftwareRenderDevice.cpp" />
+    <ClCompile Include="..\..\src\SDLSoundManager.cpp" />
+    <ClCompile Include="..\..\src\Settings.cpp" />
+    <ClCompile Include="..\..\src\SharedGameResources.cpp" />
+    <ClCompile Include="..\..\src\SharedResources.cpp" />
+    <ClCompile Include="..\..\src\SoundManager.cpp" />
+    <ClCompile Include="..\..\src\StatBlock.cpp" />
+    <ClCompile Include="..\..\src\Stats.cpp" />
+    <ClCompile Include="..\..\src\Subtitles.cpp" />
+    <ClCompile Include="..\..\src\TileSet.cpp" />
+    <ClCompile Include="..\..\src\TooltipData.cpp" />
+    <ClCompile Include="..\..\src\TooltipManager.cpp" />
+    <ClCompile Include="..\..\src\Utils.cpp" />
+    <ClCompile Include="..\..\src\UtilsDebug.cpp" />
+    <ClCompile Include="..\..\src\UtilsFileSystem.cpp" />
+    <ClCompile Include="..\..\src\UtilsParsing.cpp" />
+    <ClCompile Include="..\..\src\Version.cpp" />
+    <ClCompile Include="..\..\src\Widget.cpp" />
+    <ClCompile Include="..\..\src\WidgetButton.cpp" />
+    <ClCompile Include="..\..\src\WidgetCheckBox.cpp" />
+    <ClCompile Include="..\..\src\WidgetHorizontalList.cpp" />
+    <ClCompile Include="..\..\src\WidgetInput.cpp" />
+    <ClCompile Include="..\..\src\WidgetLabel.cpp" />
+    <ClCompile Include="..\..\src\WidgetListBox.cpp" />
+    <ClCompile Include="..\..\src\WidgetLog.cpp" />
+    <ClCompile Include="..\..\src\WidgetScrollBar.cpp" />
+    <ClCompile Include="..\..\src\WidgetScrollBox.cpp" />
+    <ClCompile Include="..\..\src\WidgetSlider.cpp" />
+    <ClCompile Include="..\..\src\WidgetSlot.cpp" />
+    <ClCompile Include="..\..\src\WidgetTabControl.cpp" />
+    <ClCompile Include="..\..\src\WidgetTooltip.cpp" />
+    <ClCompile Include="..\..\src\XPScaling.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\Animation.h" />
+    <ClInclude Include="..\..\src\AnimationManager.h" />
+    <ClInclude Include="..\..\src\AnimationMedia.h" />
+    <ClInclude Include="..\..\src\AnimationSet.h" />
+    <ClInclude Include="..\..\src\AStarContainer.h" />
+    <ClInclude Include="..\..\src\AStarNode.h" />
+    <ClInclude Include="..\..\src\Avatar.h" />
+    <ClInclude Include="..\..\src\Camera.h" />
+    <ClInclude Include="..\..\src\CampaignManager.h" />
+    <ClInclude Include="..\..\src\CombatText.h" />
+    <ClInclude Include="..\..\src\CommonIncludes.h" />
+    <ClInclude Include="..\..\src\CursorManager.h" />
+    <ClInclude Include="..\..\src\DeviceList.h" />
+    <ClInclude Include="..\..\src\EffectManager.h" />
+    <ClInclude Include="..\..\src\EnemyGroupManager.h" />
+    <ClInclude Include="..\..\src\EngineSettings.h" />
+    <ClInclude Include="..\..\src\Entity.h" />
+    <ClInclude Include="..\..\src\EntityBehavior.h" />
+    <ClInclude Include="..\..\src\EntityManager.h" />
+    <ClInclude Include="..\..\src\EventManager.h" />
+    <ClInclude Include="..\..\src\FileParser.h" />
+    <ClInclude Include="..\..\src\FogOfWar.h" />
+    <ClInclude Include="..\..\src\FontEngine.h" />
+    <ClInclude Include="..\..\src\GameSlotPreview.h" />
+    <ClInclude Include="..\..\src\GameState.h" />
+    <ClInclude Include="..\..\src\GameStateConfig.h" />
+    <ClInclude Include="..\..\src\GameStateCutscene.h" />
+    <ClInclude Include="..\..\src\GameStateLoad.h" />
+    <ClInclude Include="..\..\src\GameStateNew.h" />
+    <ClInclude Include="..\..\src\GameStatePlay.h" />
+    <ClInclude Include="..\..\src\GameStateTitle.h" />
+    <ClInclude Include="..\..\src\GameSwitcher.h" />
+    <ClInclude Include="..\..\src\GetText.h" />
+    <ClInclude Include="..\..\src\Hazard.h" />
+    <ClInclude Include="..\..\src\HazardManager.h" />
+    <ClInclude Include="..\..\src\IconManager.h" />
+    <ClInclude Include="..\..\src\InputState.h" />
+    <ClInclude Include="..\..\src\ItemManager.h" />
+    <ClInclude Include="..\..\src\ItemStorage.h" />
+    <ClInclude Include="..\..\src\Loot.h" />
+    <ClInclude Include="..\..\src\LootManager.h" />
+    <ClInclude Include="..\..\src\Map.h" />
+    <ClInclude Include="..\..\src\MapCollision.h" />
+    <ClInclude Include="..\..\src\MapParallax.h" />
+    <ClInclude Include="..\..\src\MapRenderer.h" />
+    <ClInclude Include="..\..\src\MapSaver.h" />
+    <ClInclude Include="..\..\src\Menu.h" />
+    <ClInclude Include="..\..\src\MenuActionBar.h" />
+    <ClInclude Include="..\..\src\MenuActiveEffects.h" />
+    <ClInclude Include="..\..\src\MenuBook.h" />
+    <ClInclude Include="..\..\src\MenuCharacter.h" />
+    <ClInclude Include="..\..\src\MenuConfig.h" />
+    <ClInclude Include="..\..\src\MenuConfirm.h" />
+    <ClInclude Include="..\..\src\MenuDevConsole.h" />
+    <ClInclude Include="..\..\src\MenuEnemy.h" />
+    <ClInclude Include="..\..\src\MenuExit.h" />
+    <ClInclude Include="..\..\src\MenuGameOver.h" />
+    <ClInclude Include="..\..\src\MenuHUDLog.h" />
+    <ClInclude Include="..\..\src\MenuInventory.h" />
+    <ClInclude Include="..\..\src\MenuItemStorage.h" />
+    <ClInclude Include="..\..\src\MenuLog.h" />
+    <ClInclude Include="..\..\src\MenuManager.h" />
+    <ClInclude Include="..\..\src\MenuMiniMap.h" />
+    <ClInclude Include="..\..\src\MenuNumPicker.h" />
+    <ClInclude Include="..\..\src\MenuPowers.h" />
+    <ClInclude Include="..\..\src\MenuStash.h" />
+    <ClInclude Include="..\..\src\MenuStatBar.h" />
+    <ClInclude Include="..\..\src\MenuTalker.h" />
+    <ClInclude Include="..\..\src\MenuTouchControls.h" />
+    <ClInclude Include="..\..\src\MenuVendor.h" />
+    <ClInclude Include="..\..\src\MessageEngine.h" />
+    <ClInclude Include="..\..\src\ModManager.h" />
+    <ClInclude Include="..\..\src\NPC.h" />
+    <ClInclude Include="..\..\src\NPCManager.h" />
+    <ClInclude Include="..\..\src\Platform.h" />
+    <ClInclude Include="..\..\src\PowerManager.h" />
+    <ClInclude Include="..\..\src\QuestLog.h" />
+    <ClInclude Include="..\..\src\RenderDevice.h" />
+    <ClInclude Include="..\..\src\resource.h" />
+    <ClInclude Include="..\..\src\SaveLoad.h" />
+    <ClInclude Include="..\..\src\SDLFontEngine.h" />
+    <ClInclude Include="..\..\src\SDLHardwareRenderDevice.h" />
+    <ClInclude Include="..\..\src\SDLInputState.h" />
+    <ClInclude Include="..\..\src\SDLSoftwareRenderDevice.h" />
+    <ClInclude Include="..\..\src\SDLSoundManager.h" />
+    <ClInclude Include="..\..\src\Settings.h" />
+    <ClInclude Include="..\..\src\SharedGameResources.h" />
+    <ClInclude Include="..\..\src\SharedResources.h" />
+    <ClInclude Include="..\..\src\SoundManager.h" />
+    <ClInclude Include="..\..\src\StatBlock.h" />
+    <ClInclude Include="..\..\src\Stats.h" />
+    <ClInclude Include="..\..\src\Subtitles.h" />
+    <ClInclude Include="..\..\src\TileSet.h" />
+    <ClInclude Include="..\..\src\TooltipData.h" />
+    <ClInclude Include="..\..\src\TooltipManager.h" />
+    <ClInclude Include="..\..\src\Utils.h" />
+    <ClInclude Include="..\..\src\UtilsDebug.h" />
+    <ClInclude Include="..\..\src\UtilsFileSystem.h" />
+    <ClInclude Include="..\..\src\UtilsMath.h" />
+    <ClInclude Include="..\..\src\UtilsParsing.h" />
+    <ClInclude Include="..\..\src\Version.h" />
+    <ClInclude Include="..\..\src\Widget.h" />
+    <ClInclude Include="..\..\src\WidgetButton.h" />
+    <ClInclude Include="..\..\src\WidgetCheckBox.h" />
+    <ClInclude Include="..\..\src\WidgetHorizontalList.h" />
+    <ClInclude Include="..\..\src\WidgetInput.h" />
+    <ClInclude Include="..\..\src\WidgetLabel.h" />
+    <ClInclude Include="..\..\src\WidgetListBox.h" />
+    <ClInclude Include="..\..\src\WidgetLog.h" />
+    <ClInclude Include="..\..\src\WidgetScrollBar.h" />
+    <ClInclude Include="..\..\src\WidgetScrollBox.h" />
+    <ClInclude Include="..\..\src\WidgetSlider.h" />
+    <ClInclude Include="..\..\src\WidgetSlot.h" />
+    <ClInclude Include="..\..\src\WidgetTabControl.h" />
+    <ClInclude Include="..\..\src\WidgetTooltip.h" />
+    <ClInclude Include="..\..\src\XPScaling.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\src\Flare.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

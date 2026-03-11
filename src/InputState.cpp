@@ -288,7 +288,7 @@ void InputState::saveKeyBindings() {
 
 }
 
-void InputState::handle() {
+void InputState::handle(std::function<bool(SDL_Event * event)> callback) {
 	refresh_hotkeys = false;
 
 	if (lock_all) return;

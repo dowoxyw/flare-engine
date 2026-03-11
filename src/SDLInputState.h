@@ -37,7 +37,7 @@ public:
 
 	void initJoystick();
 	void initBindings();
-	void handle();
+	void handle(std::function<bool(SDL_Event * event)> callback) override;
 	void hideCursor();
 	void showCursor();
 	std::string getJoystickName(int index);

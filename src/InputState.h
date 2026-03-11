@@ -19,6 +19,8 @@ FLARE.  If not, see http://www.gnu.org/licenses/
 #ifndef INPUT_STATE_H
 #define INPUT_STATE_H
 
+#include <functional>
+
 #include "CommonIncludes.h"
 #include "Utils.h"
 
@@ -145,7 +147,8 @@ public:
 	void unlockActionBar();
 	virtual void setCommonStrings() = 0;
 
-	virtual void handle();
+	virtual void handle(std::function<bool(SDL_Event * event)> callback);
+
 	virtual void initBindings() = 0;
 	virtual void hideCursor() = 0;
 	virtual void showCursor() = 0;

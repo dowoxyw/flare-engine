@@ -79,6 +79,9 @@ public:
 	virtual int render(Sprite* r);
 	virtual int renderToImage(Image* src_image, Rect& src, Image* dest_image, Rect& dest);
 
+	SDL_Window *   GetSDLWindow()   override;
+	SDL_Renderer * GetSDLRenderer() override;
+
 	Image *renderTextToImage(FontStyle* font_style, const std::string& text, const Color& color, bool blended);
 	void drawPixel(int x, int y, const Color& color);
 	void drawLine(int x0, int y0, int x1, int y1, const Color& color);
@@ -107,11 +110,13 @@ private:
 	void getWindowSize(short unsigned *screen_w, short unsigned *screen_h);
 	static int loadQueuedImage(void* data);
 
-	SDL_Window *window;
-	SDL_Renderer *renderer;
-	SDL_Texture *texture;
-	SDL_Surface* titlebar_icon;
-	char* title;
+	SDL_Window *   window;
+	SDL_Renderer * renderer;
+	SDL_Texture *  texture;
+	SDL_Surface *  titlebar_icon;
+
+	char * title;
+
 	Color background_color;
 
 	/* Stores the system gamma levels so they can be restored later */

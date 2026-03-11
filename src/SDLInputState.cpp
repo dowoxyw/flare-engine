@@ -290,8 +290,8 @@ void SDLInputState::initBindings() {
 	setBind(Input::TEXTEDIT_DOWN, InputBind::KEY, SDL_SCANCODE_DOWN, NULL);
 }
 
-void SDLInputState::handle() {
-	InputState::handle();
+void SDLInputState::handle(std::function<bool(SDL_Event* event)> callback) {
+	InputState::handle(nullptr);
 
 	SDL_Event event;
 
@@ -306,6 +306,9 @@ void SDLInputState::handle() {
 		if (event.type == SDL_TEXTINPUT) {
 			inkeys += event.text.text;
 		}
+
+		if (callback)
+			callback(&event);
 
 		switch (event.type) {
 			case SDL_MOUSEMOTION:

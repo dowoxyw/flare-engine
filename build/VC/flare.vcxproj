@@ -107,13 +107,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\..\SDL2\SDL2-2.0.8\include;..\..\..\SDL2\SDL2_ttf-2.0.15\include;..\..\..\SDL2\SDL2_mixer-2.5.2\include;..\..\..\SDL2\SDL2_image-2.5.2\include;..\..\lib\dirent;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\SDL2\SDL2-2.0.18\include;..\..\..\SDL2\SDL2_ttf-2.0.15\include;..\..\..\SDL2\SDL2_mixer-2.5.2\include;..\..\..\SDL2\SDL2_image-2.5.2\include;..\..\lib\dirent;..\..\lib\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\..\SDL2\SDL2_ttf-2.0.15\lib\x64;..\..\..\SDL2\SDL2_mixer-2.5.2\lib\x64;..\..\..\SDL2\SDL2_image-2.5.2\lib\x64;..\..\..\SDL2\SDL2-2.0.8\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>..\..\..\SDL2\SDL2-2.0.8\lib\x64\SDL2.lib;..\..\..\SDL2\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.lib;..\..\..\SDL2\SDL2_mixer-2.5.2\lib\x64\SDL2_mixer.lib;..\..\..\SDL2\SDL2_image-2.5.2\lib\x64\SDL2_image.lib;..\..\..\SDL2\SDL2-2.0.8\lib\x64\SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\SDL2\SDL2_ttf-2.0.15\lib\x64;..\..\..\SDL2\SDL2_mixer-2.5.2\lib\x64;..\..\..\SDL2\SDL2_image-2.5.2\lib\x64;..\..\..\SDL2\SDL2-2.0.18\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>..\..\..\SDL2\SDL2-2.0.18\lib\x64\SDL2.lib;..\..\..\SDL2\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.lib;..\..\..\SDL2\SDL2_mixer-2.5.2\lib\x64\SDL2_mixer.lib;..\..\..\SDL2\SDL2_image-2.5.2\lib\x64\SDL2_image.lib;..\..\..\SDL2\SDL2-2.0.18\lib\x64\SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -133,6 +133,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\imgui_backend\imgui_impl_sdl2.cpp" />
+    <ClCompile Include="..\..\imgui_backend\imgui_impl_sdlrenderer2.cpp" />
+    <ClCompile Include="..\..\lib\imgui\imgui.cpp" />
+    <ClCompile Include="..\..\lib\imgui\imgui_demo.cpp" />
+    <ClCompile Include="..\..\lib\imgui\imgui_draw.cpp" />
+    <ClCompile Include="..\..\lib\imgui\imgui_tables.cpp" />
+    <ClCompile Include="..\..\lib\imgui\imgui_widgets.cpp" />
     <ClCompile Include="..\..\src\Animation.cpp" />
     <ClCompile Include="..\..\src\AnimationManager.cpp" />
     <ClCompile Include="..\..\src\AnimationMedia.cpp" />
@@ -249,6 +256,14 @@
     <ClCompile Include="..\..\src\XPScaling.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\imgui_backend\imgui_impl_sdl2.h" />
+    <ClInclude Include="..\..\imgui_backend\imgui_impl_sdlrenderer2.h" />
+    <ClInclude Include="..\..\lib\imgui\imconfig.h" />
+    <ClInclude Include="..\..\lib\imgui\imgui.h" />
+    <ClInclude Include="..\..\lib\imgui\imgui_internal.h" />
+    <ClInclude Include="..\..\lib\imgui\imstb_rectpack.h" />
+    <ClInclude Include="..\..\lib\imgui\imstb_textedit.h" />
+    <ClInclude Include="..\..\lib\imgui\imstb_truetype.h" />
     <ClInclude Include="..\..\src\Animation.h" />
     <ClInclude Include="..\..\src\AnimationManager.h" />
     <ClInclude Include="..\..\src\AnimationMedia.h" />

@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{a2e928fa-f14d-4acf-8a2a-74b5d81f5e2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib\imgui">
+      <UniqueIdentifier>{7cb8f958-c68f-4d39-a4bd-5d71ad52440d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\imgui_backend">
+      <UniqueIdentifier>{20e42c2e-1c24-468f-9e16-035e83d9a8a8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Animation.cpp">
@@ -356,6 +365,27 @@
     </ClCompile>
     <ClCompile Include="..\..\src\XPScaling.cpp">
       <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\imgui\imgui.cpp">
+      <Filter>lib\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\imgui\imgui_demo.cpp">
+      <Filter>lib\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\imgui\imgui_draw.cpp">
+      <Filter>lib\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\imgui\imgui_tables.cpp">
+      <Filter>lib\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\imgui\imgui_widgets.cpp">
+      <Filter>lib\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\imgui_backend\imgui_impl_sdl2.cpp">
+      <Filter>Исходные файлы\imgui_backend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\imgui_backend\imgui_impl_sdlrenderer2.cpp">
+      <Filter>Исходные файлы\imgui_backend</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -706,6 +736,30 @@
     </ClInclude>
     <ClInclude Include="..\..\src\XPScaling.h">
       <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\imgui\imconfig.h">
+      <Filter>lib\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\imgui\imgui.h">
+      <Filter>lib\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\imgui\imgui_internal.h">
+      <Filter>lib\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\imgui\imstb_rectpack.h">
+      <Filter>lib\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\imgui\imstb_textedit.h">
+      <Filter>lib\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\imgui\imstb_truetype.h">
+      <Filter>lib\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\imgui_backend\imgui_impl_sdl2.h">
+      <Filter>Исходные файлы\imgui_backend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\imgui_backend\imgui_impl_sdlrenderer2.h">
+      <Filter>Исходные файлы\imgui_backend</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

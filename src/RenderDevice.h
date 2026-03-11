@@ -234,6 +234,9 @@ public:
 	virtual void resetGamma() = 0;
 	virtual void updateTitleBar() = 0;
 
+	virtual SDL_Window *   GetSDLWindow()   = 0;
+	virtual SDL_Renderer * GetSDLRenderer() = 0;
+
 	/** factory functions for Image */
 	virtual Image *loadImage(const std::string& filename, int error_type) = 0;
 	virtual Image *createImage(int width, int height) = 0;

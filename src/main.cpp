@@ -46,6 +46,10 @@ FLARE.  If not, see http://www.gnu.org/licenses/
 #include "UtilsParsing.h"
 #include "Version.h"
 
+#include "imgui.h"
+#include "../imgui_backend/imgui_impl_sdl2.h"
+#include "../imgui_backend/imgui_impl_sdlrenderer2.h"
+
 GameSwitcher *gswitch;
 
 class CmdLineArgs {
@@ -150,6 +154,8 @@ static void init(const CmdLineArgs& cmd_line_args) {
 	else
 		render_device = getRenderDevice(settings->render_device_name);
 
+	float main_scale = ImGui_ImplSDL2_GetContentScaleForDisplay(0);
+
 	int status = render_device->createContext();
 
 	if (status == -1) {
@@ -158,14 +164,31 @@ static void init(const CmdLineArgs& cmd_line_args) {
 		Utils::Exit(1);
 	}
 
+	// Setup Dear ImGui context
+	IMGUI_CHECKVERSION();
+	ImGui::CreateContext();
+	ImGuiIO & io = ImGui::GetIO();
+	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard; // Enable Keyboard Controls
+	io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;  // Enable Gamepad Controls
+
+  ImGui::StyleColorsDark();
+
+  // Setup scaling
+  ImGuiStyle & style = ImGui::GetStyle();
+  style.ScaleAllSizes(main_scale);        // Bake a fixed style scale. (until we have a solution for dynamic style scaling, changing this requires resetting Style + calling this again)
+  style.FontScaleDpi = main_scale;        // Set initial font scale. (in docking branch: using io.ConfigDpiScaleFonts=true automatically overrides this for every window depending on the current monitor)
+
+  // Setup Platform/Renderer backends
+  ImGui_ImplSDL2_InitForSDLRenderer(render_device->GetSDLWindow(), render_device->GetSDLRenderer());
+  ImGui_ImplSDLRenderer2_Init(render_device->GetSDLRenderer());
+
 	// reset the reload_graphics flag
 	render_device->reloadGraphics();
 
 	snd = getSoundManager();
 
 	tooltipm = new TooltipManager();
-
-	gswitch = new GameSwitcher();
+	gswitch  = new GameSwitcher();
 }
 
 static float getSecondsElapsed(uint64_t prev_ticks, uint64_t now_ticks) {
@@ -177,10 +200,12 @@ static void mainLoop () {
 
 	float seconds_per_frame = 1.f/static_cast<float>(settings->max_frames_per_sec);
 
-	uint64_t prev_ticks = SDL_GetPerformanceCounter();
+	uint64_t prev_ticks  = SDL_GetPerformanceCounter();
 	uint64_t logic_ticks = SDL_GetPerformanceCounter();
 
 	float last_fps = -1;
+
+	bool show_demo_window = true;
 
 	while ( !done ) {
 		int loops = 0;
@@ -197,7 +222,8 @@ static void mainLoop () {
 			}
 
 			SDL_PumpEvents();
-			inpt->handle();
+
+			inpt->handle(&ImGui_ImplSDL2_ProcessEvent);
 
 			// Skip game logic when minimized
 			// *except* if the player closes the window when minimized. We then continue with the logic to properly exit
@@ -239,6 +265,16 @@ static void mainLoop () {
 				gswitch->showFPS(last_fps);
 			}
 
+			ImGui_ImplSDLRenderer2_NewFrame();
+			ImGui_ImplSDL2_NewFrame();
+			ImGui::NewFrame();
+			if (show_demo_window)
+			  ImGui::ShowDemoWindow(&show_demo_window); // Show demo window! :)
+
+			ImGui::Render();
+
+			ImGui_ImplSDLRenderer2_RenderDrawData(ImGui::GetDrawData(), render_device->GetSDLRenderer());
+
 			render_device->commitFrame();
 
 			// calculate the FPS
@@ -273,6 +309,10 @@ static void mainLoop () {
 
 static void cleanup() {
 	Utils::lockFileWrite(-1);
+
+	ImGui_ImplSDLRenderer2_Shutdown();
+	ImGui_ImplSDL2_Shutdown();
+	ImGui::DestroyContext();
 
 	delete gswitch;
 

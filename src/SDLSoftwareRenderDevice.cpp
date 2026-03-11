@@ -237,11 +237,12 @@ int SDLSoftwareRenderDevice::createContextInternal() {
 		settings->screen_h = eset->resolutions.min_screen_h;
 	}
 
-	bool settings_changed = ((fullscreen != settings->fullscreen && destructive_fullscreen) ||
-			                 hwsurface != settings->hwsurface ||
-							 vsync != settings->vsync ||
-							 texture_filter != settings->texture_filter ||
-							 ignore_texture_filter != eset->resolutions.ignore_texture_filter);
+	bool settings_changed = (
+		(fullscreen           != settings->fullscreen && destructive_fullscreen) ||
+		hwsurface             != settings->hwsurface      ||
+		vsync                 != settings->vsync          ||
+		texture_filter        != settings->texture_filter ||
+		ignore_texture_filter != eset->resolutions.ignore_texture_filter);
 
 	Uint32 w_flags = 0;
 	Uint32 r_flags = 0;
@@ -525,6 +526,16 @@ void SDLSoftwareRenderDevice::commitFrame() {
 	inpt->window_resized = false;
 
 	return;
+}
+
+SDL_Window * SDLSoftwareRenderDevice::GetSDLWindow()
+{
+	return window;
+}
+
+SDL_Renderer * SDLSoftwareRenderDevice::GetSDLRenderer()
+{
+	return renderer;
 }
 
 void SDLSoftwareRenderDevice::destroyContext() {

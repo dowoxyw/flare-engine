@@ -571,6 +571,16 @@ void SDLHardwareRenderDevice::commitFrame() {
 	return;
 }
 
+SDL_Window * SDLHardwareRenderDevice::GetSDLWindow()
+{
+	return window;
+}
+
+SDL_Renderer * SDLHardwareRenderDevice::GetSDLRenderer()
+{
+	return renderer;
+}
+
 void SDLHardwareRenderDevice::destroyContext() {
 	resetGamma();
 

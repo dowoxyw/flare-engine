@@ -118,7 +118,7 @@ void MapParallax::render(const FPoint& cam, const std::string& map_layer) {
 		if (layers[i].map_layer != map_layer)
 			continue;
 
-		int width = layers[i].sprite->getGraphicsWidth();
+		int width  = layers[i].sprite->getGraphicsWidth();
 		int height = layers[i].sprite->getGraphicsHeight();
 
 		layers[i].fixed_offset.x += layers[i].fixed_speed.x;
@@ -135,12 +135,13 @@ void MapParallax::render(const FPoint& cam, const std::string& map_layer) {
 			layers[i].fixed_offset.y += static_cast<float>(height);
 
 		FPoint dp;
-		dp.x = map_center.x - cam.x;
-		dp.y = map_center.y - cam.y;
+		dp.x = map_center.x + (cam.x * layers[i].speed) + layers[i].fixed_offset.x;
+		dp.y = map_center.y + (cam.y * layers[i].speed) + layers[i].fixed_offset.y;
 
-		Point center_tile = Utils::mapToScreen(map_center.x + (dp.x * layers[i].speed) + layers[i].fixed_offset.x, map_center.y + (dp.y * layers[i].speed) + layers[i].fixed_offset.y, cam.x, cam.y);
-		center_tile.x -= width/2;
-		center_tile.y -= height/2;
+		Point center_tile = Utils::mapToScreen(dp.x, dp.y, cam.x, cam.y);
+
+		center_tile.x -= width  / 2;
+		center_tile.y -= height / 2;
 
 		Point draw_pos;
 		draw_pos.x = center_tile.x - static_cast<int>(ceilf(static_cast<float>(settings->view_w_half + center_tile.x) / static_cast<float>(width))) * width;
